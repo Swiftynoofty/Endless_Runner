@@ -28,41 +28,12 @@ public class PlayerController : MonoBehaviour
 
         playerObject.velocity = new Vector2 (movementValueX * maxSpeed, playerObject.velocity.y);//running/walking
         isOnGround = Physics2D.OverlapCircle(groundChecker.transform.position, 1.0f, whatIsGround);//jumpping
-        
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-
-            issprint = true;
-
-        }
-        else
-        {
-           issprint = false;
-        }
-        
-       
-      
 
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
             playerObject.AddForce(new Vector2(0.0f, jumpForce));
         }
-    }
-    void LateUpdate()
-    {
-        if (issprint == false)
-        {
-            maxSpeed = 5f;  
-
-        } 
-        if (issprint == true)
-        {
-            maxSpeed = tempSpeed;
-        
-        }  
-
-
     }
 
     
