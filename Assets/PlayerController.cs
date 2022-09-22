@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public GameObject groundChecker;
     public LayerMask whatIsGround;
     public float jumpForce;
-    public float tempSpeed = 10.0f;
     public float maxSpeed = 5.0f;
     bool isOnGround = false;
     bool issprint = false;
@@ -24,6 +23,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            maxSpeed = 10.0f;
+        } else
+        {
+            maxSpeed = 5.0f;
+        }
+
+
+        if (Input.GetKey(KeyCode.S))
+        {
+              playerObject rigidbody2D
+
+        }
+
+
         float movementValueX = Input.GetAxis("Horizontal");
 
         playerObject.velocity = new Vector2 (movementValueX * maxSpeed, playerObject.velocity.y);//running/walking
@@ -35,6 +50,8 @@ public class PlayerController : MonoBehaviour
             playerObject.AddForce(new Vector2(0.0f, jumpForce));
         }
     }
+
+
 
     
 }
