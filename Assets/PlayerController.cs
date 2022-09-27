@@ -25,16 +25,17 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            maxSpeed = 10.0f;
+            maxSpeed = 20.0f;
         } else
         {
-            maxSpeed = 5.0f;
+            maxSpeed = 10.0f;
         }
 
 
         if (Input.GetKey(KeyCode.S))
         {
-              playerObject rigidbody2D
+            playerObject.AddForce(new Vector2(0f, -10f));
+
 
         }
 
