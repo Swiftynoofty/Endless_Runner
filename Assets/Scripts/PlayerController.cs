@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5.0f;
     bool isOnGround = false;
     bool issprint = false;
+    public float fallForce;
 
     
 
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
-            playerObject.AddForce(new Vector2(0f, -17f));
+            playerObject.AddForce(new Vector2(0f, fallForce));
 
 
         }
