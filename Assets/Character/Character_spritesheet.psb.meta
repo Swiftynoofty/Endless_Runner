@@ -48,7 +48,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -113,7 +113,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 371}
-    spritePosition: {x: 806, y: 544}
+    spritePosition: {x: 80, y: 526}
   - name: Pos4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +135,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 725}
-    spritePosition: {x: 641, y: 541}
+    spritePosition: {x: 86, y: 522}
   - name: Pos3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +157,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 419, y: 542}
+    spritePosition: {x: 41, y: 526}
   - name: Pos2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +179,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 184}
-    spritePosition: {x: 224, y: 547}
+    spritePosition: {x: 41, y: 534}
   - name: Pos 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
