@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4989121431410751331}
   - component: {fileID: 1618158728562154093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform2
-  m_TagString: Untagged
+  m_TagString: CleanUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2936909451106719708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
+  m_LocalScale: {x: 1, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5069589747554406854}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069589747554406854}
   - component: {fileID: 2198583961128546131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformMed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
