@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     bool isOnGround = false;
     bool issprint = false;
     public float fallForce;
+    public Animator animator;
 
     
 
@@ -31,6 +32,10 @@ public class PlayerController : MonoBehaviour
         {
             maxSpeed = 10.0f;
         }
+
+        animator.SetFloat("Speed", Mathf.Abs(maxSpeed));
+
+
 
 
         if (Input.GetKey(KeyCode.S))
