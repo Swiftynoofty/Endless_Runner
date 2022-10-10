@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject groundChecker;
     public LayerMask whatIsGround;
     public float jumpForce;
-    public float maxSpeed = 5.0f;
+    public float maxSpeed = 0.0f;
     bool isOnGround = false;
     bool issprint = false;
     public float fallForce;
@@ -30,10 +30,10 @@ public class PlayerController : MonoBehaviour
             maxSpeed = 20.0f;
         } else
         {
-            maxSpeed = 10.0f;
+            maxSpeed = 12.0f;
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(maxSpeed));
+        animator.SetFloat("Speed",maxSpeed);
 
 
 
