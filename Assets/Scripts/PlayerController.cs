@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         float movementValueX = Input.GetAxis("Horizontal");
 
         playerObject.velocity = new Vector2 (movementValueX * maxSpeed, playerObject.velocity.y);//running/walking
+
         isOnGround = Physics2D.OverlapCircle(groundChecker.transform.position, 1.0f, whatIsGround);//jumpping
 
 

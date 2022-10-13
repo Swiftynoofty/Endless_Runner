@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Rigidbody2D rigidbody;
-    public float scroll = 10f;
+    public GameObject player;
+    
 
     void Update()
     {
-        rigidbody.velocity = new Vector2(scroll, 0f);
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
     }
 }
