@@ -24,6 +24,9 @@ public class playerControll : MonoBehaviour
     //coyote time aka jump even when not on ground + buffering
     public float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
+    //jump buffer time!!! (yay)
+    public float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -50,10 +53,19 @@ public class playerControll : MonoBehaviour
         {
             return;
         }
-         
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime; 
+        }
+
         
         if (coyoteTimeCounter > 0f && !Input.GetButton("Jump"))
-        {
+        {   
             doubleJump = false;
         }
 
