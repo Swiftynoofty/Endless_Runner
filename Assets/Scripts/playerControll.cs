@@ -54,6 +54,16 @@ public class playerControll : MonoBehaviour
             return;
         }
 
+        animator.SetBool("Jump", !IsGrounded());
+
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetBool("Jump", true); 
+        }
+
+
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
@@ -98,7 +108,7 @@ public class playerControll : MonoBehaviour
         }
 
 
-
+        animator.SetFloat("yVelocity", rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         Flip();
