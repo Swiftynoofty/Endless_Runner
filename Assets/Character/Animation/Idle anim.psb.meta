@@ -94,8 +94,8 @@ ScriptedImporter:
   mosaicSpriteImportData:
   - name: Idle
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.4810231, y: 0.5569303}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -116,15 +116,15 @@ ScriptedImporter:
     spritePosition: {x: 878, y: 667}
   - name: Idle 2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.49653462, y: 0.5075563}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 1903
       y: 4
-      width: 140
-      height: 444
+      width: 139
+      height: 448
     spriteID: b4da36ac7b5944c6892bb04a24c001f9
     spriteBone: []
     spriteOutline: []

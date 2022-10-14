@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 
-    public text scoreText;
-    public text hiScoreText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI hiScoreText;
     public float scoreCount;
     public float hiScoreCount;
     public float pointPerSecond;
@@ -21,7 +22,25 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + scoreCount;
-        hiScoreText.text = "High Score: " + hiScoreCount;
+
+        if (scoreIncreasing)
+        {
+            scoreCount += pointPerSecond * Time.deltaTime;
+        }
+        
+
+        if(scoreCount > hiScoreCount)
+        {
+            hiScoreCount = scoreCount;
+        }
+
+
+        scoreText.text = "Score: " + Mathf.Round (scoreCount);
+        hiScoreText.text = "High Score: " + Mathf.Round (hiScoreCount);
+    }
+
+    public void AddScore(int pointsToAdd)
+    {
+        scoreCount += pointsToAdd; 
     }
 }

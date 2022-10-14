@@ -12,11 +12,11 @@ public class playerControll : MonoBehaviour
     public Animator animator;
     private bool doubleJump;
     //dashing mechanic
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
-    private float dashingTime =  0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 0.65f;
     //speeding up mechanic
     public float speedMultiplier;
     public float speedIncreaseMilestone;
@@ -28,12 +28,19 @@ public class playerControll : MonoBehaviour
     public float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
+    public LevelManager theLevelManager;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] public TrailRenderer tr; 
-    // Start is called before the first frame update
-    
+    [SerializeField] public TrailRenderer tr;
+            
+
+
+
+
+
+
 
     // Update is called once per frame
     private void Update()
@@ -60,7 +67,7 @@ public class playerControll : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            animator.SetBool("Jump", true); 
+            animator.SetBool("Jump", true);
         }
 
 
@@ -70,12 +77,12 @@ public class playerControll : MonoBehaviour
         }
         else
         {
-            jumpBufferCounter -= Time.deltaTime; 
+            jumpBufferCounter -= Time.deltaTime;
         }
 
-        
+
         if (coyoteTimeCounter > 0f && !Input.GetButton("Jump"))
-        {   
+        {
             doubleJump = false;
         }
 
@@ -100,7 +107,7 @@ public class playerControll : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-           //speed increaser 
+        //speed increaser 
         if (transform.position.x > speedMilestoneCount)
         {
             speedMilestoneCount += speedIncreaseMilestone;
@@ -113,6 +120,10 @@ public class playerControll : MonoBehaviour
 
         Flip();
     }
+
+   
+
+    
 
     private void FixedUpdate()
     {
@@ -154,5 +165,20 @@ public class playerControll : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+
+        if (collision.gameObject.tag == "Player")
+        {
+
+            theLevelManager.RestartGame();
+            canDash = true;
+            speed = 6f;
+        }
+    }
+
+
 } 
 

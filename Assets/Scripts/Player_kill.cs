@@ -6,6 +6,25 @@ using UnityEngine;
 
 public class Player_kill : MonoBehaviour
 {
+
+
+    public LevelManager theLevelManager;
+    public playerControll controllPlayer;
+    
+
+
+    
+    private ScoreManager scoreManager;
+
+  
+    
+
+
+    void Start()
+    {
+        scoreManager = FindObjectOfType<ScoreManager>();
+    }
+    
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,8 +32,12 @@ public class Player_kill : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            
+            theLevelManager.RestartGame();
+            
+            
         }
     }
 
+   
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CleanUp
+  - Trap
   layers:
   - Default
   - TransparentFX

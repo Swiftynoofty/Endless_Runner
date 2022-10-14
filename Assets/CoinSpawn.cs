@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class CoinSpawn : MonoBehaviour
 {
-
     public GameObject[] objectsToSpawn;
-    
+
 
     float timeToNextSpawn;
     float timeSinceLastSpawn = 0.0f;
@@ -18,8 +17,8 @@ public class Spawner : MonoBehaviour
     int callCounter = 0;
     public int callsBeforeRateIncrease = 5;
 
-  
-    
+
+
 
 
 
@@ -34,8 +33,8 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timeSinceLastSpawn = timeSinceLastSpawn + Time.deltaTime;
-           
-       if (timeSinceLastSpawn > timeToNextSpawn)
+
+        if (timeSinceLastSpawn > timeToNextSpawn)
         {
             int selection = Random.Range(0, objectsToSpawn.Length);
 
@@ -44,26 +43,5 @@ public class Spawner : MonoBehaviour
             timeToNextSpawn = Random.Range(minSpawnTime, maxSpawnTime);
             timeSinceLastSpawn = 0.0f;
         }
-         
-            createSpawnTimer -= Time.deltaTime;
-        if(createSpawnTimer < 0)
-        {
-            CustomInvoke();
-        }
-
-
-        void CustomInvoke()
-        {
-            
-            callCounter++;
-            if(callCounter >= callsBeforeRateIncrease)
-            {
-                maxSpawnTime -= rateIncrease;
-                callCounter = 0;
-            }
-            createSpawnTimer = maxSpawnTime;
-        }
-
-
-    }  
+    }
 }

@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject player;
-    public float speedIncrease = 0.5f;
-    
-    
-    
+    public float LazerSpeed; //adjust this in the inspector to make the scroll speed less or more
+    public playerControll laserSpeed;
 
-   
-
-
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + speedIncrease, transform.position.y, transform.position.z);
+        
+        transform.position = new Vector3(laserSpeed.speed, 0, 0);
     }
 }
